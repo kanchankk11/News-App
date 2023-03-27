@@ -34,12 +34,12 @@ export default class Navbar extends Component {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
                   <a className="nav-link active" aria-current="page" href="/">
-                    Home
+                    India
                   </a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="/">
-                    Link
+                    International
                   </a>
                 </li>
                 <li className="nav-item dropdown">
@@ -51,7 +51,7 @@ export default class Navbar extends Component {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Categories
                   </a>
                   <ul
                     className="dropdown-menu"
@@ -59,17 +59,17 @@ export default class Navbar extends Component {
                   >
                     <li>
                       <a className="dropdown-item" href="/">
-                        Action
+                        Sports
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/">
-                        Another action
+                        Entertainment
                       </a>
                     </li>
                     <li>
                       <a className="dropdown-item" href="/">
-                        Something else here
+                        Weather
                       </a>
                     </li>
                   </ul>
