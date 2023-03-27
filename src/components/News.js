@@ -2,8 +2,21 @@
 import React, { Component } from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./Spinner";
+import PropTypes from 'prop-types'
 
 export default class News extends Component {
+  static defaultProps = {
+    country: 'in',
+    pageSize: 16,
+    category : ""
+  }
+
+  static propTypes = {
+    country : PropTypes.string,
+    pageSize: PropTypes.number,
+    category : PropTypes.string
+  }
+
   constructor() {
     super();
       
@@ -16,7 +29,8 @@ export default class News extends Component {
   }
 
   async componentDidMount(){
-    let apiurl = `https://newsapi.org/v2/top-headlines?country=in&page=${this.state.page}&apiKey=${process.env.REACT_APP_API_KEY}&pageSize=16`;
+    let apiurl = `https://newsapi.org/v2/top-headlines?country=in&page=${this.state.page}&apiKey=${process.env.REACT_APP_API_KEY}&pageSize=${this.props.pageSize}&category=${this.props.category}`;
+console.log(apiurl);
     this.setState({loading : true});
     let data = await fetch(apiurl);
     let parsedData = await data.json();
@@ -30,7 +44,8 @@ export default class News extends Component {
 
   handlePage = async (direction)=> {
     
-    let apiurl = `https://newsapi.org/v2/top-headlines?country=in&page=${direction === "left" ?this.state.page-1 : this.state.page+1}&apiKey=${process.env.REACT_APP_API_KEY}&pageSize=16`;
+    let apiurl = `https://newsapi.org/v2/top-headlines?country=in&page=${direction === "left" ?this.state.page-1 : this.state.page+1}&apiKey=${process.env.REACT_APP_API_KEY}&pageSize=${this.props.pageSize}&category=${this.props.category}`;
+    console.log(apiurl);
     this.setState({loading : true})
     let data = await fetch(apiurl);
     let parsedData = await data.json();
@@ -55,7 +70,7 @@ export default class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2>Top headlines</h2>
+        <h2>{`Top ${this.props.category === "All"? "" : this.props.category} headlines`}</h2>
         { this.state.loading && <Spinner />}
 
         { !this.state.loading &&

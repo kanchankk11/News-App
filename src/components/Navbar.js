@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {Link } from "react-router-dom";
 export default class Navbar extends Component {
   render() {
     return (
@@ -16,9 +16,7 @@ export default class Navbar extends Component {
               />
               News.io
             </a>
-            <button
-              className="navbar-toggler"
-              type="button"
+            <button        className="navbar-toggler" type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -32,48 +30,37 @@ export default class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
-                    India
-                  </a>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/">
+                    All
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
-                    International
-                  </a>
+                  <Link className="nav-link" to="/sports">
+                    Sports
+                  </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="/"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Categories
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Sports
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Entertainment
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Weather
-                      </a>
-                    </li>
-                  </ul>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/business">
+                    Business
+                  </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/entertainment">
+                    Entertainment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/health">
+                    Health
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/science">
+                    Science
+                  </Link>
+                </li>
+                
               </ul>
             </div>
           </div>
