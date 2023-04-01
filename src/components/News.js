@@ -57,7 +57,7 @@ export default function News(props) {
 
   return (
     <div className="container my-3">
-      <h2>{`Top ${props.category === "All" ? "" : props.category} headlines`}</h2>
+      <h2 style={{marginTop : '60px'}}>{`Top ${props.category === "All" ? "" : props.category} headlines`}</h2>
       {loading && <Spinner />}
 
       {!loading &&
