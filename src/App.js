@@ -1,12 +1,11 @@
 import "./App.css";
 
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-export default class App extends Component {
-  render() {
+export default function App() {
     return (
       <>
         <Router>
@@ -25,5 +24,4 @@ export default class App extends Component {
         </Router>
       </>
     );
-  }
 }
